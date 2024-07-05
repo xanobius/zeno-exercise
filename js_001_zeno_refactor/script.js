@@ -182,22 +182,24 @@ document.getElementById('btn-register').addEventListener('click', function() {
 
 
 /*
-Aufgabe Zeno:
-Sobald auf den "Neues Mitglied erfassen" gedrückt wird, soll:
-- Der Vorname und Nachname im Bereich "Persönliches" hineingeschrieben werden
-- Ein Bild der Fahne des Betreffenden Vereins im Bereich "Verein" angezeigt werden
-- Ein Bild des betreffenden Instrumentes im Bereich "Instrument" angezeigt werden
+Aufgabe Zeno, 2024-07-05:
+- Labels korrigieren, damit diese immer ersichtlich sind
+- Visuell anzeigen, wenn Felder obligatorisch sind
 
-Spezielles:
-Wenn ein Feld nicht ausgefüllt wurde, soll:
-Billigvariante: Per Alert eine Fehlermeldung erscheinen
-Bessere Variante: In einem neuen Bereich eine Fehlermeldung erscheinen
-Luxus-Variante: Eine Fehlermeldung unter dem falsch ausgefühlten Feld erscheinen und das Feld soll rot eingefärbt sein
-Bei allen Varianten soll sich in den unteren drei Resultsbereichen nichts ändern
+Coding:
+- Versuche gleiche code-stellen in funktionen auszulagern, welche dann aufgerufen werden.
+z.B.
 
-Wichtig: Es dürfen weitere änderungen am DOM (HTML) vorgenommen werden, z.B. neue IDs, zusätzliche Tags etc.
+```
+  let messageEmptyfield = document.getElementById('instrument-message');
+  messageEmptyfield.classList.remove('hidden');
+```
+kommt zigmal vor, dabei ändert sich nur die ID. könnte der Parameter sein.
 
-Freiwillig: Den bums schöner gestalten
+Bei den Fehlern haben wir gesehen, wie man HTML elemente neu erstellen kann.
+Für jede gültige Formular-Einsendung eine neue Card "Erfasstes Mitglieg" zu erstellen,
+so dass bei 5 erfassten mitgliedern alle diese neben/ untereinander angezeigt werden.
+
 
 Wichtige resource:
 https://javascript.info/

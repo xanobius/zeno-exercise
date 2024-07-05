@@ -26,13 +26,14 @@ Der Hinweis zu Fehlern markiert direkt das Eingabefeld und erscheint visuell her
 
 ## Wunschzenario: 
 - [ ] Wenn ich das Formular sehe, weiss ich genau, was ich auszufüllen habe und vor allem was ich ausfüllen MUSS.
-- [ ] Wenn ich etwas falsch ausgefüllt habe, möchte ich direkt über ALLE Fehler informiert werden.
-- [ ] Ich möchte bei Fehlern genau wissen, WAS falsch gemacht wurde, bzw. was erwartet wird.
+- [x] Wenn ich etwas falsch ausgefüllt habe, möchte ich direkt über ALLE Fehler informiert werden.
+- [x] Ich möchte bei Fehlern genau wissen, WAS falsch gemacht wurde, bzw. was erwartet wird.
 
 
 ## Lösungsansätze / Brainstorm
 
 Könnten wir es so machen, dass wir so wie jetzt, den Zustand (nicht gut) zuerst in eine Variable speichern und dann das nächste kontrolliert wird und am schluss dann anhand der Variable die Fehler angezeigt werden?
 
+-> Haben wir erledigt
 
 
