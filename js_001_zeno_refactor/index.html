@@ -50,27 +50,47 @@
             <div class="subtitel-block">
                 Verein
             </div>
-            <div class="radio-button-block">
-                <input type="radio" id="club-first" name="radio" value="first"/>
-                <label for="club-first">Bürchen</label>
-            </div>
-            <div class="radio-button-block">
-                <input type="radio" id="club-second" name="radio" value="second"/>
-                <label for="club-second">Brigerbad</label>
+            <div class="relative-block">
+                <div class="radio-button-block">
+                    <input type="radio" id="club-first" name="radio" value="first"/>
+                    <label for="club-first">Bürchen</label>
+                </div>
+                <div class="radio-button-block">
+                    <input type="radio" id="club-second" name="radio" value="second"/>
+                    <label for="club-second">Brigerbad</label>
+                </div>
+                <div class="empty-message hidden" id="club-message">
+                    <div class="content-empty-message">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="sub-input-block">
             <div class="subtitel-block">
                 Instrument
             </div>
-            <select id="field-instrument" name="field" data-name="Field" class="w-select">
-                <option value="">Bitte auswählen</option>
-                <option value="first">Pfeife</option>
-                <option value="second">Trommel</option>
-                <option value="third">Fahne</option>
-                <option value="fourth">Major</option>
-                <option value="fifth">Ehrendame</option>
-            </select>
+            <div class="relative-block">
+                <select id="field-instrument" name="field" data-name="Field" class="w-select">
+                    <option value="">Bitte auswählen</option>
+                    <option value="first">Pfeife</option>
+                    <option value="second">Trommel</option>
+                    <option value="third">Fahne</option>
+                    <option value="fourth">Major</option>
+                    <option value="fifth">Ehrendame</option>
+                </select>
+                <div class="empty-message hidden" id="instrument-message">
+                    <div class="content-empty-message">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-input-block">
+            <div id="error-list-wrapper" class="hidden">
+                <h2>Du hast wie folgt versagt</h2>
+                <ul id="error-list">
+                    <!-- li elemente werden durch den Code bei Bedarf eingefügt -->
+                </ul>
+            </div>
         </div>
         <div class=btn-block>
             <button class="button" id="btn-register">Anmelden</button>
