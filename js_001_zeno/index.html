@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+</style>
+<div class="flex-box-align-horizontal">
+    <div class="background-block">
+        <div class="titel-block">
+            Neues Mitglied erfassen
+        </div>
+        <div class="sub-input-block">
+            <div class="subtitel-block">
+                Personalien
+            </div>
+            <div class="flex-box-align-horizontal">
+                <div class="relative-block">
+                    <input class="input-field" id="firstname" placeholder="Vorname"></input>
+                    <div class="empty-message hidden" id="firstname-message">
+                        <div class="content-empty-message">
+                        </div>
+                    </div>
+                </div>
+                <div class="relative-block">
+                    <input class="input-field" id="lastname" placeholder="Nachname"></input>
+                    <div class="empty-message hidden" id="lastname-message">
+                        <div class="content-empty-message">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative-block full-width">
+                <input class="input-field mail" id="mail" type="email" placeholder="E-Mail"></input>
+                <div class="empty-message hidden" id="mail-message">
+                    <div class="content-empty-message">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-input-block">
+            <div class="subtitel-block">
+                Verein
+            </div>
+            <div class="radio-button-block">
+                <input type="radio" id="club-first" name="radio" value="first"/>
+                <label for="club-first">Bürchen</label>
+            </div>
+            <div class="radio-button-block">
+                <input type="radio" id="club-second" name="radio" value="second"/>
+                <label for="club-second">Brigerbad</label>
+            </div>
+        </div>
+        <div class="sub-input-block">
+            <div class="subtitel-block">
+                Instrument
+            </div>
+            <select id="field-instrument" name="field" data-name="Field" class="w-select">
+                <option value="">Bitte auswählen</option>
+                <option value="first">Pfeife</option>
+                <option value="second">Trommel</option>
+                <option value="third">Fahne</option>
+                <option value="fourth">Major</option>
+                <option value="fifth">Ehrendame</option>
+            </select>
+        </div>
+        <div class=btn-block>
+            <button class="button" id="btn-register">Anmelden</button>
+        </div>
+    </div>
+    <div class="background-block">
+        <div class="titel-block">
+            Erfasstes Mitglied
+        </div>
+        <div class="sub-input-block">
+            <div class="subtitel-block">
+                Personalien
+            </div>
+            <div class="flex-box-align-horizontal">
+                <div class="relative-block">
+                    <div class="input-field-goal" id="input-field-goal-firstname"></div>
+                </div>
+                <div class="relative-block">
+                    <div class="input-field-goal" id="input-field-goal-lastname"></div>
+                </div>
+            </div>
+            <div class="relative-block full-width">
+                <div class="input-field-goal-big" id="input-field-goal-mail"></div>
+            </div>
+        </div>
+        <div class="sub-input-block">
+            <div class="subtitel-block">
+                Verein
+            </div>
+            <div class="radio-button-goal">
+                <div class="flex-box-align-horizontal">
+                    <div class="logo-club-block"></div>
+                    <div class="name-club-block" id="field-goal-club-name-radio">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-input-block">
+            <div class="subtitel-block">
+                Instrument
+            </div>
+            <div class="flex-box-align-horizontal">
+                <div class="icon-instrument-goal"></div>
+                <div class="name-club-block" id="instrument-input-field-goal">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

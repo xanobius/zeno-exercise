@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zenos JS start</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<main>
+    <section class="feedback">
+        <div id="feedbackMessage" class="default">
+            Gib einen Wert ein und wähle deine Validierung
+        </div>
+    </section>
+    <section class="form">
+        <label for="txtInput">
+            <input type="text" id="txtInput">
+            <input type="text" id="txtInput2">
+            <input type="text" id="txtInput3">
+        </label>
+        <select id="validations">
+            <option value="required">Ausgefüllt</option>
+            <option value="numeric">Numerisch</option>
+            <option value="between">Zwischen 10 und 20 Zeichen</option>
+            <option value="contains">Enthält ein "X", eine "3" und ein "$"</option>
+        </select>
+        <button id="btnCheck">Check Input</button>
+    </section>
+    <section class="history">
+        <ul id="historyList"></ul>
+    </section>
+</main>
+</body>
+</html>
