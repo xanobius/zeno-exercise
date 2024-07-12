@@ -16,8 +16,11 @@ const newMember = {
   lastname: '',
   mail: '',
   club: '',
-  instrument: ''
+  instrument: '',
+  complete: false
 };
+
+const allSavedMembers = [];
 
 let club = "mal lüäge was passiert";
 
@@ -50,10 +53,12 @@ function handlefilledField(inputId, messageId) {
 
 
 document.getElementById('btn-register').addEventListener('click', function() {
+  
   const firstname = document.getElementById('firstname').value;
   const lastname = document.getElementById('lastname').value;
   const mail = document.getElementById('mail').value;
 
+  newMember.complete = false;
   newMember.firstname = document.getElementById('firstname').value;
   newMember.lastname = document.getElementById('lastname').value;
   newMember.mail =  document.getElementById('mail').value;
@@ -200,31 +205,46 @@ document.getElementById('btn-register').addEventListener('click', function() {
 
     let backgroundImageInstrument = document.querySelector('.icon-instrument-goal');
     backgroundImageInstrument.style.backgroundImage = 'url(' + instrumentIcons[selectedinstrument] + ')';  
+
+    newMember.complete = true;
+
   }
 });
 
-function setInstrumentIcon()
-{
 
-}
-
-function addElementToGrid(value) 
-{
+function addElementToGrid(value) {
   const myDiv = document.createElement('span');
   myDiv.innerText = value;
   const container = document.getElementById('gridlist');
   container.appendChild(myDiv);
 }
 
-document.getElementById('btn-save').addEventListener('click', function() {
-  //gespeicherte variabeln in das grid schreiben
-  addElementToGrid(newMember.firstname);
-  addElementToGrid(newMember.lastname);
-  addElementToGrid(newMember.mail);
-  addElementToGrid(newMember.club);
-  addElementToGrid(newMember.instrument);
+function paintAllSavedMembers() {
+  // Grid Leeren
+  document.getElementById('gridlist').innerHTML = '';
+
+
+  //gespeicherte variabeln in das grid schreiben Für JEDEN Member
+
+  for(let i = 0; i < allSavedMembers.length; i++){
+    addElementToGrid(allSavedMembers[i].firstname);
+    addElementToGrid(allSavedMembers[i].lastname);
+    addElementToGrid(allSavedMembers[i].mail);
+    addElementToGrid(allSavedMembers[i].club);
+    addElementToGrid(allSavedMembers[i].instrument);
+  }
+
 
   setTimeout(() => {  
+      // Variable für neue Person zurücksetzen
+      newMember.firstname = '';
+      newMember.lastname = '';
+      newMember.mail = '';
+      newMember.club = '';
+      newMember.instrument = '';
+      newMember.complete = false;
+
+      // Formularfelder Zurücksetzen
       const fieldsToClear = [
         'input-field-goal-firstname',
         'input-field-goal-lastname',
@@ -248,6 +268,18 @@ document.getElementById('btn-save').addEventListener('click', function() {
     }, 
     10
   );
+}
+
+document.getElementById('btn-save').addEventListener('click', function() {
+  // Member soll in die Liste mit allen Personen gespeichert werden
+    // WENN die Person neu und ausgefüllt ist
+  if(newMember.complete){
+    allSavedMembers.push({
+      ...newMember // Klon von NewMember erstellen, sonst wird die REFERENZ genommen (-> Wert ändern sich im Nachhinein weiterhin)
+    });
+  }
+  // Alle gespeicherten Personen sollen angezeigt werden.
+  paintAllSavedMembers();
 });
 
 
