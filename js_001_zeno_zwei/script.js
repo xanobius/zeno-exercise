@@ -8,6 +8,13 @@ const iconFahne = "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/6680
 const iconEhrendame = "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bca058fac246c7c5f91_eherndame.svg";
 let club = "mal lüäge was passiert";
 
+const newMember = {
+  firstname: '',
+  lastname: '',
+  mail: '',
+  club: '',
+  instrument: ''
+}
 
 //Funktion wenn eingabefeld leer
 function handleEmptyField(inputId, messageId) {
@@ -37,10 +44,13 @@ function handlefilledField(inputId, messageId) {
 
 
 document.getElementById('btn-register').addEventListener('click', function() {
-
   const firstname = document.getElementById('firstname').value;
   const lastname = document.getElementById('lastname').value;
   const mail = document.getElementById('mail').value;
+
+  newMember.firstname = document.getElementById('firstname').value;
+  newMember.lastname = document.getElementById('lastname').value;
+  newMember.mail =  document.getElementById('mail').value;
 
   // Error list leeren und verbergen
   const errorList = [];
@@ -162,15 +172,16 @@ document.getElementById('btn-register').addEventListener('click', function() {
       let backgroundImageClub = document.querySelector('.logo-club-block');
       backgroundImageClub.style.backgroundImage = 'url(' + urlLogoBuerchen + ')';
       club = registerclub;
+      newMember.club = registerclub;
+    }
 
-        }
     if (document.getElementById('club-second').checked) {
       let registerclub = document.querySelector('span[for="club-second"]').innerText;
       document.getElementById('field-goal-club-name-radio').innerText = registerclub;
       let backgroundImageClub = document.querySelector('.logo-club-block');
       backgroundImageClub.style.backgroundImage = 'url(' + urlLogoBrigerbad + ')';
       club = registerclub;
-
+      newMember.club = registerclub;
     }
 
 
@@ -179,6 +190,7 @@ document.getElementById('btn-register').addEventListener('click', function() {
     let instrument = document.getElementById('field-instrument');
     let selectedinstrument = instrument.options[instrument.selectedIndex].text;
     document.getElementById('instrument-input-field-goal').innerText = selectedinstrument;
+    newMember.instrument = selectedinstrument;
 
     if(selectedinstrument === "Pfeife"){
       let backgroundImageInstrument = document.querySelector('.icon-instrument-goal');
@@ -201,54 +213,54 @@ document.getElementById('btn-register').addEventListener('click', function() {
       backgroundImageInstrument.style.backgroundImage = 'url(' + iconFahne + ')';
     }
 
-    document.getElementById('btn-save').addEventListener('click', function() {
-      //gespeicherte variabeln in das grid schreiben
-      let firstnameRegisterDiv = document.createElement('div');
-      firstnameRegisterDiv.innerText = firstname;
-      let firstnamecontainer = document.getElementById('gridlist');
-      firstnamecontainer.appendChild(firstnameRegisterDiv);
-
-      let lastnameRegisterDiv = document.createElement('div');
-      lastnameRegisterDiv.innerText = lastname;
-      let lastnamecontainer = document.getElementById('gridlist');
-      lastnamecontainer.appendChild(lastnameRegisterDiv);
-
-      let mailRegisterDiv = document.createElement('div');
-      mailRegisterDiv.innerText = mail;
-      let mailcontainer = document.getElementById('gridlist');
-      mailcontainer.appendChild(mailRegisterDiv);
-
-      let clubRegisterDiv = document.createElement('div');
-      clubRegisterDiv.innerText = club;
-      let clubcontainer = document.getElementById('gridlist');
-      clubcontainer.appendChild(clubRegisterDiv);
-
-      let instrumentRegisterDiv = document.createElement('div');
-      instrumentRegisterDiv.innerText = selectedinstrument;
-      let instrumentcontainer = document.getElementById('gridlist');
-      instrumentcontainer.appendChild(instrumentRegisterDiv);
- 
-      setTimeout(() => {
-        let selectedinstrument = "";
-        let club = "";
-        let mail = "";
-        let lastname = "";
-        let firstname = "";
-        let registerclub = "";
-        document.getElementById('input-field-goal-firstname').innerText = firstname;
-        document.getElementById('input-field-goal-lastname').innerText = lastname;
-        document.getElementById('input-field-goal-mail').innerText = mail;
-        document.getElementById('instrument-input-field-goal').innerText = selectedinstrument;
-        document.getElementById('field-goal-club-name-radio').innerText = registerclub;
-
-    }, 10);
-
-      });
-
 
   }
 });
 
+document.getElementById('btn-save').addEventListener('click', function() {
+  //gespeicherte variabeln in das grid schreiben
+  let firstnameRegisterDiv = document.createElement('div');
+  firstnameRegisterDiv.innerText = newMember.firstname;
+  let firstnamecontainer = document.getElementById('gridlist');
+  firstnamecontainer.appendChild(firstnameRegisterDiv);
+
+  let lastnameRegisterDiv = document.createElement('div');
+  lastnameRegisterDiv.innerText = newMember.lastname;
+  let lastnamecontainer = document.getElementById('gridlist');
+  lastnamecontainer.appendChild(lastnameRegisterDiv);
+
+  let mailRegisterDiv = document.createElement('div');
+  mailRegisterDiv.innerText = newMember.mail;
+  let mailcontainer = document.getElementById('gridlist');
+  mailcontainer.appendChild(mailRegisterDiv);
+
+  let clubRegisterDiv = document.createElement('div');
+  clubRegisterDiv.innerText = newMember.club;
+  let clubcontainer = document.getElementById('gridlist');
+  clubcontainer.appendChild(clubRegisterDiv);
+
+  let instrumentRegisterDiv = document.createElement('div');
+  instrumentRegisterDiv.innerText = newMember.instrument;
+  let instrumentcontainer = document.getElementById('gridlist');
+  instrumentcontainer.appendChild(instrumentRegisterDiv);
+
+  setTimeout(() => {
+    let selectedinstrument = "";
+    let club = "";
+    let mail = "";
+    let lastname = "";
+    let firstname = "";
+    let registerclub = "";
+    document.getElementById('input-field-goal-firstname').innerText = firstname;
+    document.getElementById('input-field-goal-lastname').innerText = lastname;
+    document.getElementById('input-field-goal-mail').innerText = mail;
+    document.getElementById('instrument-input-field-goal').innerText = selectedinstrument;
+    document.getElementById('field-goal-club-name-radio').innerText = registerclub;
+
+    }, 
+    10
+  );
+});
 
 
 /*
