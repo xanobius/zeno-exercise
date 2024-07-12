@@ -1,0 +1,10 @@
+# Zenos Fragen
+
+[ ] Gibt es einen Unterschied zwischen "" und ''
+[ ] Git und VS Studio, wie funktioniert das 
+[ ] Wie gehe ich am besten bei der fehlersuche vor, als ich die Funktionen erstellt habe, funktionierte nichts mehr :), wie kann ich nun den Fehler finden
+[ ] ich wollte der Variabeln club den Wert registerclub übergeben. dies habe ich in der if Schleife gemacht mit let club = registerclub; warum funktioniert das nicht. wie kann ich den gespeicherten wert übergeben 
+[ ] Wie würde es funktionieren wenn man ein bestätigungs Mail versenden lassen würde 
+
+
+

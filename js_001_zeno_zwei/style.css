@@ -1,0 +1,263 @@
+
+body{
+    font-family: Varela Round;
+    color: #0F0101;
+}
+
+.background-block{
+    display: block;
+    width: 400px;
+    min-width: 500px;
+    background-color: #f4f4f4;
+    padding: 30px;
+    margin: 50px;
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.19));
+    transition: all 1.2s ease;
+}
+.background-block:hover{
+    background-color: #E0D9D9;
+    filter: drop-shadow(0px 0px 35px rgba(0, 0, 0, 0.25));
+}
+
+.flex-box-align-horizontal{
+    display: flex;
+    width: 100%;
+
+}
+.sub-input-block{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.titel-block{
+    font-family: Varela Round;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.subtitel-block{
+    font-family: Varela Round;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.btn-block{
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 45px;
+    padding-right: 45px;
+    border-radius: 100vw;
+    font-family: Varela Round;
+    font-size: 14px;
+    color: #f4f4f4;
+    background: linear-gradient(92deg, #0F0101 1.16%, #353232 103.91%);
+    border: 0px;
+}
+
+.button:hover {
+    background: linear-gradient(60deg, #0F0101 1.16%, #353232 35%);
+}
+
+
+
+.input-field{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0 solid rgba(0, 0, 0, 0);
+    border-bottom: 2px solid #A0A0A0;
+    width: 90%;
+    padding: 3px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+
+}
+
+.input-field-inside{
+    background-color: rgba(255, 0, 0, 0);
+    border: 0px;
+}
+
+.input-field-inside-full-width{
+    background-color: rgba(255, 0, 0, 0);
+    border: 0px;
+    width: 98%;
+
+}
+
+.input-field label{
+    border: 0px;
+    position: absolute;
+    left: 10px;
+    color: #A0A0A0;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+input:focus{
+    border: 0px;
+  }
+  input:focus ~ label,
+  input:valid ~ label{
+    border: 0px;
+    top: -15px;
+    left: 0px;
+    font-size: 10px;
+    padding: 1px 2px;
+    background: #ffffff00;
+  }
+
+.input-field.mail{
+    width: 95%;
+}
+
+.relative-block{
+    position: relative;
+    width: 100%;
+}
+.relative-block.full-width{
+    position: relative;
+}
+
+
+.empty-message{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18px;
+    width: 18px;
+    border-radius: 100vw;
+    background: linear-gradient(92deg, #990808 1.16%, #450707 103.91%);
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+    top: -10px;
+    left: -10px;
+    right: auto;
+    bottom: auto;
+}
+
+.hidden{
+    display: none;
+}
+
+.content-empty-message{
+    background-image: url("https://cdn.prod.website-files.com/667b33c870758265fedc2ff5/66878cf6cfcacb312e2b6a80_!.svg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70%;
+    height: 70%;
+
+}
+
+.input-field.empty{
+    border: 2px solid #8b0000;
+    padding: 3px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+
+}
+
+.empty-field-description{
+    background-color: red;
+    height: 20px;
+    line-height: 12px;
+
+}
+
+.input-field-goal{
+    background-color: rgba(255, 255, 255, 0);
+    width: 90%;
+    min-height: 18px;
+    border: 0 solid rgba(0, 0, 0, 0);
+    border-bottom: 2px solid #A0A0A0;
+    padding: 3px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+}
+
+.input-field-goal-big{
+    width: 95%;
+    min-height: 18px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0 solid rgba(0, 0, 0, 0);
+    border-bottom: 2px solid #A0A0A0;
+    padding: 3px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+}
+.radio-button-block{
+    margin-bottom: 5px;
+}
+.radio-label{
+    color: #A0A0A0;
+    font-size: 16px;
+}
+
+
+.logo-club-block{
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-radius: 5px;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.19));
+    background-image: url("https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.name-club-block{
+    margin-left: 10px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0 solid rgba(0, 0, 0, 0);
+    border-bottom: 2px solid #A0A0A0;
+    min-width: 150px;
+}
+
+.icon-instrument-goal{
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.grid-liste-register{
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    display: grid;
+
+}
+.full-width-center{
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    width: 90%;
+    min-width: 900px;
+    max-width: 1440px;
+}
