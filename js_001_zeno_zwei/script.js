@@ -283,27 +283,9 @@ document.getElementById('btn-save').addEventListener('click', function() {
 });
 
 
-/*
-Aufgabe Zeno, 2024-07-05:
-- Labels korrigieren, damit diese immer ersichtlich sind
-- Visuell anzeigen, wenn Felder obligatorisch sind
-
-Coding:
-- Versuche gleiche code-stellen in funktionen auszulagern, welche dann aufgerufen werden.
-z.B.
-
-```
-  let messageEmptyfield = document.getElementById('instrument-message');
-  messageEmptyfield.classList.remove('hidden');
-```
-kommt zigmal vor, dabei ändert sich nur die ID. könnte der Parameter sein.
-
-Bei den Fehlern haben wir gesehen, wie man HTML elemente neu erstellen kann.
-Für jede gültige Formular-Einsendung eine neue Card "Erfasstes Mitglieg" zu erstellen,
-so dass bei 5 erfassten mitgliedern alle diese neben/ untereinander angezeigt werden.
 
 
-Wichtige resource:
-https://javascript.info/
+//aufgabe sortieren der tabelle 
+//alles in einer tabelle und nicht in span speichern und im lokalen speicher abspeichern 
+//hinzufügen im dropdown von javascript
 
-*/
