@@ -1,12 +1,15 @@
 
 const urlLogoBuerchen = "https://cdn.prod.website-files.com/64639c50efb7008417607903/650473a0d6fc5f212d1d5f44_buerchen-logo-p-500.jpg";
 const urlLogoBrigerbad = "https://cdn.prod.website-files.com/64639c50efb7008417607903/64f7748b0cd59ebcc8d4e321_ballenfuehrer-logo.png";
-const iconTrommel = "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bcaeef02f2ba28cb419_trommel.svg";
-const iconPfeife = "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bca2f09f3e46b875429_pfeife.svg";
-const iconMajor = "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bcb0af4eff7206a338f_major.svg";
-const iconFahne = "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bcaded09e104d37e918_fahne.svg";
-const iconEhrendame = "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bca058fac246c7c5f91_eherndame.svg";
-let club = "mal lüäge was passiert";
+
+const instrumentIcons = {
+  "Pfeife" :  "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bca2f09f3e46b875429_pfeife.svg" ,
+  "Trommel":  "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bcaeef02f2ba28cb419_trommel.svg",
+  "Major":    "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bcb0af4eff7206a338f_major.svg" ,
+  "Ehrendame": "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bca058fac246c7c5f91_eherndame.svg" ,
+  "Fahne":    "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bcaded09e104d37e918_fahne.svg" ,
+  "Jungtambour":  "https://uploads-ssl.webflow.com/667b33c870758265fedc2ff5/66803bcaeef02f2ba28cb419_trommel.svg",
+};
 
 const newMember = {
   firstname: '',
@@ -14,7 +17,10 @@ const newMember = {
   mail: '',
   club: '',
   instrument: ''
-}
+};
+
+let club = "mal lüäge was passiert";
+
 
 //Funktion wenn eingabefeld leer
 function handleEmptyField(inputId, messageId) {
@@ -190,32 +196,17 @@ document.getElementById('btn-register').addEventListener('click', function() {
     let instrument = document.getElementById('field-instrument');
     let selectedinstrument = instrument.options[instrument.selectedIndex].text;
     document.getElementById('instrument-input-field-goal').innerText = selectedinstrument;
-    newMember.instrument = selectedinstrument;
+    newMember.instrument = selectedinstrument;    
 
-    if(selectedinstrument === "Pfeife"){
-      let backgroundImageInstrument = document.querySelector('.icon-instrument-goal');
-      backgroundImageInstrument.style.backgroundImage = 'url(' + iconPfeife + ')';
-    }
-    if(selectedinstrument === "Trommel"){
-      let backgroundImageInstrument = document.querySelector('.icon-instrument-goal');
-      backgroundImageInstrument.style.backgroundImage = 'url(' + iconTrommel + ')';
-    }
-    if(selectedinstrument === "Major"){
-      let backgroundImageInstrument = document.querySelector('.icon-instrument-goal');
-      backgroundImageInstrument.style.backgroundImage = 'url(' + iconMajor + ')';
-    }
-    if(selectedinstrument === "Ehrendame"){
-      let backgroundImageInstrument = document.querySelector('.icon-instrument-goal');
-      backgroundImageInstrument.style.backgroundImage = 'url(' + iconEhrendame + ')';
-    }
-    if(selectedinstrument === "Fahne"){
-      let backgroundImageInstrument = document.querySelector('.icon-instrument-goal');
-      backgroundImageInstrument.style.backgroundImage = 'url(' + iconFahne + ')';
-    }
-
-
+    let backgroundImageInstrument = document.querySelector('.icon-instrument-goal');
+    backgroundImageInstrument.style.backgroundImage = 'url(' + instrumentIcons[selectedinstrument] + ')';  
   }
 });
+
+function setInstrumentIcon()
+{
+
+}
 
 function addElementToGrid(value) 
 {
@@ -227,7 +218,6 @@ function addElementToGrid(value)
 
 document.getElementById('btn-save').addEventListener('click', function() {
   //gespeicherte variabeln in das grid schreiben
-
   addElementToGrid(newMember.firstname);
   addElementToGrid(newMember.lastname);
   addElementToGrid(newMember.mail);
@@ -243,12 +233,10 @@ document.getElementById('btn-save').addEventListener('click', function() {
         'field-goal-club-name-radio'
       ];
       
-      // Variante 1, oldschool
-      /*
+      // Variante 1, oldschool    
       for(let i = 0; i < fieldsToClear.length; i++){
         document.getElementById(fieldsToClear[i]).innerHTML = '';
       }
-        */
 
       // Variante 2, Array Function forEach
       /*
@@ -257,8 +245,6 @@ document.getElementById('btn-save').addEventListener('click', function() {
 
       // Variante 2 mit Arrow-Function
       // fieldsToClear.forEach((id) => document.getElementById(id).innerHTML = '');
-
-      
     }, 
     10
   );
