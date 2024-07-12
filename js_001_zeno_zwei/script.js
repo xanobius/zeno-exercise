@@ -235,18 +235,30 @@ document.getElementById('btn-save').addEventListener('click', function() {
   addElementToGrid(newMember.instrument);
 
   setTimeout(() => {  
-    let selectedinstrument = "";
-    let club = "";
-    let mail = "";
-    let lastname = "";
-    let firstname = "";
-    let registerclub = "";
-    document.getElementById('input-field-goal-firstname').innerText = firstname;
-    document.getElementById('input-field-goal-lastname').innerText = lastname;
-    document.getElementById('input-field-goal-mail').innerText = mail;
-    document.getElementById('instrument-input-field-goal').innerText = selectedinstrument;
-    document.getElementById('field-goal-club-name-radio').innerText = registerclub;
+      const fieldsToClear = [
+        'input-field-goal-firstname',
+        'input-field-goal-lastname',
+        'input-field-goal-mail',
+        'instrument-input-field-goal',
+        'field-goal-club-name-radio'
+      ];
+      
+      // Variante 1, oldschool
+      /*
+      for(let i = 0; i < fieldsToClear.length; i++){
+        document.getElementById(fieldsToClear[i]).innerHTML = '';
+      }
+        */
 
+      // Variante 2, Array Function forEach
+      /*
+      fieldsToClear.forEach(function(id) { document.getElementById(id).innerHTML = '' });
+      */
+
+      // Variante 2 mit Arrow-Function
+      // fieldsToClear.forEach((id) => document.getElementById(id).innerHTML = '');
+
+      
     }, 
     10
   );
