@@ -217,34 +217,24 @@ document.getElementById('btn-register').addEventListener('click', function() {
   }
 });
 
+function addElementToGrid(value) 
+{
+  const myDiv = document.createElement('span');
+  myDiv.innerText = value;
+  const container = document.getElementById('gridlist');
+  container.appendChild(myDiv);
+}
+
 document.getElementById('btn-save').addEventListener('click', function() {
   //gespeicherte variabeln in das grid schreiben
-  let firstnameRegisterDiv = document.createElement('div');
-  firstnameRegisterDiv.innerText = newMember.firstname;
-  let firstnamecontainer = document.getElementById('gridlist');
-  firstnamecontainer.appendChild(firstnameRegisterDiv);
 
-  let lastnameRegisterDiv = document.createElement('div');
-  lastnameRegisterDiv.innerText = newMember.lastname;
-  let lastnamecontainer = document.getElementById('gridlist');
-  lastnamecontainer.appendChild(lastnameRegisterDiv);
+  addElementToGrid(newMember.firstname);
+  addElementToGrid(newMember.lastname);
+  addElementToGrid(newMember.mail);
+  addElementToGrid(newMember.club);
+  addElementToGrid(newMember.instrument);
 
-  let mailRegisterDiv = document.createElement('div');
-  mailRegisterDiv.innerText = newMember.mail;
-  let mailcontainer = document.getElementById('gridlist');
-  mailcontainer.appendChild(mailRegisterDiv);
-
-  let clubRegisterDiv = document.createElement('div');
-  clubRegisterDiv.innerText = newMember.club;
-  let clubcontainer = document.getElementById('gridlist');
-  clubcontainer.appendChild(clubRegisterDiv);
-
-  let instrumentRegisterDiv = document.createElement('div');
-  instrumentRegisterDiv.innerText = newMember.instrument;
-  let instrumentcontainer = document.getElementById('gridlist');
-  instrumentcontainer.appendChild(instrumentRegisterDiv);
-
-  setTimeout(() => {
+  setTimeout(() => {  
     let selectedinstrument = "";
     let club = "";
     let mail = "";
